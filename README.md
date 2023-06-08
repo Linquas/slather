@@ -67,6 +67,12 @@ If your configuration produces a universal binary you need to specify a specific
 $ slather coverage -s --arch x86_64 --scheme YourXcodeSchemeName --configuration YourBuildConfigurationName path/to/project.xcodeproj
 ```
 
+If you use the binary from different machine, you need to map the path in the coverage data to local source file path:
+
+```sh
+$ slather coverage -s --arch x86_64 --scheme YourXcodeSchemeName --configuration YourBuildConfigurationName path/to/project.xcodeproj --path-equivalence /directory/of/other/machine,/path/to/local/files
+```
+
 ### For multiple modules
 
 If you want to run some modules, but not all (like modules created by CocoaPods) you can do it like this:
